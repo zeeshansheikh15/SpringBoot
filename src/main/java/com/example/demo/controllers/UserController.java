@@ -25,7 +25,7 @@ public class UserController {
 		return "viewUsers";
 	}
 	
-	@GetMapping(path="/")
+	@GetMapping(path="*")
 	public String getPage() {
 		return "index";
 	}
