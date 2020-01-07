@@ -14,29 +14,28 @@ import com.example.demo.models.User;
 import com.example.demo.repository.UserRepsitory;
 
 @Controller
-@RequestMapping(path="/demo")
 public class UserController {
 	
 	@Autowired
 	private UserRepsitory userRepository;
 	
-	@GetMapping(path="/viewUsers")
+	@GetMapping(path="/demo/viewUsers")
 	public String getUsers(Model model) {
 		model.addAttribute("users", userRepository.findAll());
 		return "viewUsers";
 	}
 	
-	@GetMapping(path="/page")
+	@GetMapping(path="/")
 	public String getPage() {
 		return "index";
 	}
 	
-	@GetMapping(path="/add")
+	@GetMapping(path="/demo/add")
 	public String getWelcome() {
 		return "add";
 	}
 	
-	@PostMapping(path="/add")
+	@PostMapping(path="/demo/add")
 	public String addUser(@RequestParam String name, @RequestParam String email){
 
 		User user = new User();
